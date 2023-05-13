@@ -4,6 +4,7 @@
 	echo $_SESSION['user_id'];
 	echo $_SESSION['username'];
 ?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -11,6 +12,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Belépés</title>
+	<script>
+		function checkCookie() {
+			let user = getCookie(<?php $_SESSION['username']?>);
+			if (user != "") {
+				alert("Welcome " + user +"!");
+			} 
+		}
+	</script>
 </head>
 <body>
 	<ul class="navbar">
@@ -34,7 +43,7 @@
 				<div class="forgot">
 					Forgot password?
 				</div>
-				<input type="submit" value="Login">
+				<input type="submit" value="Login" onclick="checkCookie()">
 				<div class="signup">
 					Not a member?<a href="Signup.php">Sign up</a>
 				</div>
