@@ -1,8 +1,7 @@
 <?php
 	session_start();
 	include("Connection.php");
-	echo $_SESSION['user_id'];
-	echo $_SESSION['username'];
+	$str = "Logged-in: ";
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,9 +18,10 @@
 	<ul class="navbar">
 		<li><a href="Main.php">Home</a></li>
 		<li><a href="Messages.php">Messages</a></li>
-		<li><a href="#contact">Contact</a></li>
 		<li><a href="Shop.php">Shop</a></li>
+		<li><a href="subpages.php">Subpages</a></li>
 		<li><a href="<?php if($_SESSION['user_id'] == 1) { echo "Login.php"; } else { echo "Logout.php"; } ?>"><?php if($_SESSION['user_id'] == 1) { echo "Login"; } else { echo "Logout"; } ?></a></li>
+		<li style="float:right;" ><a style=" display: block; color: Black; 	background-color:#578CAF; text-align: center; padding: 15px 100px; text-decoration: none; font-weight:bold; font-style:italic; transform: scale(1.0);"><?php echo $str . $_SESSION['first_name'] . " " .  $_SESSION['last_name'] . " (" . $_SESSION['username'] . ")"; ?></a></li>
 	</ul>
 <div class="first_div">
 	<h1>Main Page</h1>

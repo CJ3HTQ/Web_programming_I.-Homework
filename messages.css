@@ -25,6 +25,10 @@ ul.navbar li a {
 	font-style:italic;
 }
 
+ .right {
+	float:right;
+}
+
 ul.navbar li a:hover {
 	display: block;
 	background-color: #ddd;
@@ -44,11 +48,16 @@ ul.navbar li a:hover {
 		font-weight:bold;
 		font-style:italic;
 	}
+	.comments_div {
+        margin-top: 20px;
+		overflow: scroll;
+		height:200px;
+    }
 }
   .comments_div {
         margin-top: 20px;
 		overflow: scroll;
-		height:60%;
+		height:500px;
     }
     
     .comments_div h3 {
