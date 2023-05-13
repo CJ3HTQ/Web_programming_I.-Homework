@@ -1,8 +1,6 @@
 <?php
 	session_start();
 	include("Connection.php");
-	echo $_SESSION['user_id'];
-	echo $_SESSION['username'];
 ?>
 
 <!DOCTYPE HTML>
@@ -13,6 +11,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Belépés</title>
 	<script>
+		function setCookie(cname, cvalue, exdays) {
+			const d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			let expires = "expires="+d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+			}
+
+			function getCookie(cname) {
+			let name = cname + "=";
+			let ca = document.cookie.split(';');
+			for(let i = 0; i < ca.length; i++) {
+				let c = ca[i];
+				while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+			}
 		function checkCookie() {
 			let user = getCookie(<?php $_SESSION['username']?>);
 			if (user != "") {
@@ -25,7 +44,6 @@
 	<ul class="navbar">
 		<li><a href="Main.php">Home</a></li>
 		<li><a href="Messages.php">Messages</a></li>
-		<li><a href="#contact">Contact</a></li>
 		<li><a href="Shop.php">Shop</a></li>
 		<li><a href="<?php if($_SESSION['user_id'] == 1) { echo "Login.php"; } else { echo "Logout.php"; } ?>"><?php if($_SESSION['user_id'] == 1) { echo "Login"; } else { echo "Logout"; } ?></a></li>
 	</ul>
