@@ -1,8 +1,7 @@
 <?php
 	session_start();
 	include("Connection.php");
-	echo $_SESSION['user_id'];
-	echo $_SESSION['username'];
+	
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -16,9 +15,7 @@
 	<ul class="navbar">
 		<li><a href="Main.php">Home</a></li>
 		<li><a href="Messages.php">Messages</a></li>
-		<li><a href="#contact">Contact</a></li>
 		<li><a href="Shop.php">Shop</a></li>
-		<li><a href="<?php if($_SESSION['user_id'] == 1) { echo "Login.php"; } else { echo "Logout.php"; } ?>"><?php if($_SESSION['user_id'] == 1) { echo "Login"; } else { echo "Logout"; } ?></a></li>
 	</ul>
 	<div class="Signup_div">
 		<h1>Signup</h1>
@@ -34,6 +31,14 @@
 				<div class="txt_fields">
 					<input type="text" name="email" required>
 					<label>Email</label>
+				</div>
+				<div class="txt_fields">
+					<input type="text" name="firstname" required>
+					<label>First name</label>
+				</div>
+				<div class="txt_fields">
+					<input type="text" name="lastname" required>
+					<label>Last name</label>
 				</div>
 				<input type="submit" value="Signup">
 			</form>
