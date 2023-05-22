@@ -4,6 +4,7 @@
 	$password="password";
 	$dbname="webshop";
 // Kapcsolódás az adatbázishoz
+
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Kapcsolódás ellenőrzése

@@ -19,7 +19,7 @@
 	</ul>
 	<div class="Signup_div">
 		<h1>Signup</h1>
-			<form method="post" action="registration.php">
+			<form method="post" action="Registration.php">
 				<div class="txt_fields">
 					<input type="text" name="username" required>
 					<label>Username</label>

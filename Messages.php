@@ -1,11 +1,23 @@
 <?php
 	session_start();
 	include("Connection.php");
-	//include("Set_user.php");
-	//echo $_SESSION['user_id'];
-	//echo $_SESSION['username'];
 	$str = "Logged-in: ";
-//	echo $str . $_SESSION['first_name'] . " " .  $_SESSION['last_name'] . " (" . $_SESSION['username'] . ")";
+	if(!isset($_SESSION['user_id'])) {
+		$_SESSION['user_id'] = 1;
+		$_SESSION['username'] = "Guest";
+	} else {
+		include("Set_User.php");
+		$query = "SELECT user_id, first_name, last_name FROM users WHERE username = '$username' LIMIT 1";
+		$result = mysqli_query($conn, $query);
+		
+		if ($result && mysqli_num_rows($result) > 0) {
+			$user_data = mysqli_fetch_assoc($result);
+			$_SESSION['user_id'] = $user_data['user_id'];
+			$_SESSION['username'] = $username;
+			$_SESSION['first_name'] = $user_data['first_name'];
+			$_SESSION['last_name'] = $user_data['last_name'];
+		}
+	}
 	
 		if (isset($_POST['post_comment'])) {
 
