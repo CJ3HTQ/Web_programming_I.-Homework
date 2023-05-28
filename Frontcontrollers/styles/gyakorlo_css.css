@@ -1,0 +1,288 @@
+body {
+	margin: 0;
+}
+
+ul.navbar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #578CAF;
+}
+
+ul.navbar li {
+	float: left;
+}
+
+ul.navbar li a {
+	display: block;
+	color: Black;
+	background-color:#578CAF;
+	text-align: center;
+	padding: 15px 100px;
+	text-decoration: none;
+	font-weight:bold;
+	font-style:italic;
+}
+
+ul.navbar li a:hover {
+	display: block;
+	background-color: #ddd;
+	color: black;
+	text-align: center;
+	padding: 15px 100px;
+	text-decoration: none;
+	transform: scale(1.1);
+	border-radius: 10px;
+	font-weight:bold;
+	font-style:italic;
+}
+
+@media screen and (max-width: 1250px) {
+	ul.navbar li {
+		float: none;
+		font-weight:bold;
+		font-style:italic;
+	}
+	
+	.login_div{
+	margin:25%;
+	}
+}
+
+
+.first_div{
+	margin-left: 0.5%;
+}
+
+.google_map{
+	width:100%;
+	height:500px;
+	margin-left: 0.5%;
+}
+
+.google_map h2{
+	position: center;
+}
+
+.login_div{
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.login_div h1{
+	text-align: center;
+	padding: 0 0 20px 0;
+	border-bottom: 1px solid gray;
+	font-style:italic;
+	
+}
+
+.login_div form{
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+
+form .txt_fields{
+	position: relative;
+	border-bottom: 2px solid gray;
+	margin: 30px;
+}
+
+.txt_fields input{
+	width: 100%;
+	padding: 0 5px;
+	height: 40px;
+	font-size: 16px;
+	border: none;
+	outline: none;
+}
+
+.txt_fields label{
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	color: gray;
+	transform: translateY(-50%);
+	font-size:16px;
+	pointer-events: none;
+	font-style:italic;
+}
+
+.txt_fields span::before{
+	content:'';
+	position: absolute;
+	top:40px;
+	left:0;
+	width:0%;
+	height: 2px;
+	background-color: black;
+	transition: .5s;
+}
+
+.txt_fields input:focus ~ label,
+.txt_fields input:valid ~ label{
+	top: -5px;
+	color:black;
+}
+
+.txt_fields input:focus ~ span::before,
+.txt_fields input:valid ~ span::before{
+	width:100%;
+}
+
+.forgot{
+	margin: -5px 0 20px 5px;
+	color: gray;
+	cursor:pointer;
+	font-style:italic;
+}
+
+.forgot:hover{
+	text-decoration: underline;
+}
+
+input[type="submit"]{
+	width:100%;
+	height:50px;
+	border:1px solid;
+	background-color: #578CAF;
+	border-radius: 25px;
+	font-size: 18px;
+	color: white;
+	font-weight:700;
+	cursor:pointer;
+	outline:none;
+	
+}
+
+input[type="submit"]{
+	border-color:gray;
+	transition: .5s;
+}
+
+.signup{
+	margin: 30px 0;
+	text-align: center;
+	font-size:16px;
+	color:gray;
+	font-style:italic;
+}
+
+.signup a{
+	color: gray;
+	text-decoration:none;
+}
+
+.signup a:hover{
+	text-decoration:underline;
+}
+
+.Signup_div{
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.Signup_div h1{
+	text-align: center;
+	padding: 0 0 20px 0;
+	border-bottom: 1px solid gray;
+	font-style:italic;
+	
+}
+
+.Signup_div form{
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+
+
+.sec{
+    padding: 10px 5%;
+}
+
+.products{
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(320px, 1fr));
+}
+
+.products .card{
+    width: 310px;
+    background: #f4f4f4;
+    box-shadow: 0 10px 20px rgba(0,0,0.3);
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+.products .card img{
+    height: 250px;
+    width: 100%;
+}
+.products .card .desc{
+    padding: 5px 20px;
+    opacity: 0.7;
+}
+.products .card .title{
+    font-weight: 900;
+    font-size: 20px;
+    color:#578CAF;
+    padding: 0 20px;
+}
+.products .card .box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.products .card .box .price{
+    color: #578CAF;
+    font-size: 20px;
+    font-weight:  bold;
+}
+.products .card .box .btn{
+    font-size: 13px;
+    color: #578CAF;
+    padding: 10px 18px;
+    font-weight: 900;
+    border: 1px solid #578CAF;
+    border-radius: 10px;
+	font-weight:bold;
+	font-style:italic;
+}
+.products .card .box .btn:hover{
+    cursor: pointer;
+    background-color: #578CAF;
+    color: black;
+	font-weight:bold;
+	font-style:italic;
+}
+footer {
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px 20px;
+    background-color: #578CAF;
+	position: absolute;
+	top:95%;
+	display: table-cell;
+}
+div#content {
+    display: table-cell;
+    width: 100%;
+    border-radius: 10px;
+	position: bottom;
+    padding: 15px;
+}
+
+#div1, #div2 {float:left; width:403px; height:302px; margin:10px;border:1px solid #aaaaaa;}
+         
+#mycanvas{border:3px red;}
